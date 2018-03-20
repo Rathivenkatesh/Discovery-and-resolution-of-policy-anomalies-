@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ 	<package name="default" extends="struts-default">
+ 		<action name="ALogin" class="com.logics.Adminlogin">
+ 			<result name="registerpoints">geopointsregister.jsp</result>
+ 			<result name="success">geopointslogin.jsp</result>
+ 			<result name="input">admin.jsp</result>
+ 			<result name="error">admin.jsp</result>
+ 		</action>
+ 		
+ 		<action name="requests" class="com.logics.emprequests">
+ 			<result name="success">emprequest.jsp</result>
+ 		</action>
+ 		<action name="profiles" class="com.logics.profiles">
+ 			<result name="success">profiles.jsp</result>
+ 		</action>
+ 		 <action name="allow" class="com.logics.emprequests" method="allow" >
+ 			<result name="success">emprequest.jsp</result>
+ 		</action>
+ 		
+ 		<action name="geopointsvalidation" class="com.logics.Geopointsregister" method="execute">
+ 			<result name="success">adminhome.jsp</result>
+ 		</action>
+ 		<action name="geopointslogin" class="com.logics.Geopointslogin">
+ 			<result name="success">/adminhome.jsp</result>
+ 			<result name="error">/admin.jsp</result>
+ 		</action>
+ 		<action name="CLogin" class="com.logics.Clientlogin">
+ 			<result name="success">clienthome.jsp</result>
+ 			<result name="input">client.jsp</result>
+ 			<result name="error">client.jsp</result>
+ 		</action> 		
+ 		<action name="policy" class="com.logics.Policy">
+ 			<result name="success">policy.jsp</result>
+ 		</action>
+ 		<action name="policyset" class="com.logics.Policyset">
+ 			<result name="success">policyset.jsp</result>
+ 		</action>
+ 		<action name="resources" class="com.logics.Resources" method="getValues">
+ 			<result name="success">policyenforcement.jsp</result>
+ 		</action>
+ 		<action name="Resources" class="com.logics.Resources">
+ 			<result name="success">pepview.jsp</result>
+ 		</action>
+ 		<action name="services" class="com.services.Webservice">
+ 			<result name="success">pdpview.jsp</result>
+ 		</action>
+ 		<action name="output" class="com.logics.Outputview">
+ 			<result name="success">outputview.jsp</result>
+ 		</action>
+ 		<action name="update" class="com.logics.Updateresource">
+ 			<result name="success">clienthome.jsp</result>
+ 		</action>
+ 		<action name="register" class="com.logics.Register" method="display">
+ 			<interceptor-ref name="defaultStack">
+ 				<param name="validation.excludeMethods">display</param>
+ 			</interceptor-ref>
+ 			<result name="none">register.jsp</result>
+ 		</action> 
+ 		<action name="Register" class="com.logics.Register"> 			
+ 			<result name="success">client.jsp</result>
+ 			<result name="error">register.jsp</result>
+ 			<result name="input">register.jsp</result>
+ 		</action>
+ 		<action name="admin">
+ 			<result>admin.jsp</result>
+ 		</action> 
+ 		<action name="client">
+ 			<result>client.jsp</result>
+ 		</action> 	
+ 		<action name="home">
+ 			<result>index.jsp</result>
+ 		</action> 
+ 		<action name="ahome">
+ 			<result>adminhome.jsp</result>
+ 		</action> 
+ 		<action name="chome">
+ 			<result>clienthome.jsp</result> 			
+ 		</action>
+ 		<action name="policies">
+ 			<result>adminhome.jsp</result>
+ 		</action> 	
+ 		<action name="logout">
+ 			<result>index.jsp</result>
+ 		</action>	
+ 	</package>
+</struts>    
